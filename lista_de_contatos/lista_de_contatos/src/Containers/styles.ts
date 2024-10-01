@@ -4,7 +4,11 @@ export const MainContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 40px;
-  column-gap: 20px
+  column-gap: 20px;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  
 `;
 
 export const Form = styled.form`
@@ -19,7 +23,8 @@ export const Form = styled.form`
   }
 `;
 export const DivH1 = styled.h1`
-  text-align: center
+  text-align: center;
+  margin-top: 40px;
 `;
 
 export const DivFundo = styled.div`

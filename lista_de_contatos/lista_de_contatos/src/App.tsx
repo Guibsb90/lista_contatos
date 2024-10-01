@@ -1,13 +1,17 @@
 import React from 'react';
-
+import { Provider } from 'react-redux';
 
 import { Container } from './Containers/Container';
+import  store  from './store'
+import { GlobalStyle } from './styles/styles'
 
 function App() {
   return (
-    <div className="App">
-    <Container />
-    </div>
+    <Provider store={store}>
+      <GlobalStyle />
+      <Container />
+    </Provider>   
+    
   );
 }
 
