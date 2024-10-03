@@ -4,7 +4,7 @@ import { RootReducer } from "../../store"
 
 import { ItemLista} from "../ItemLista/ItemLista"
 import { ListaNomes } from "./styles"
-import Contatos from "../../models/Contato"
+
 
 
 

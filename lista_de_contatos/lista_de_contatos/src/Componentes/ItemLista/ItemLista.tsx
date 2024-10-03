@@ -11,8 +11,8 @@ export const ItemLista = ({email: emailOriginal, nome: nomeOriginal, tel: telOri
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
   const [nome, setNome] = useState('')
-  const [tel, setTel] = useState('')
-  const [email, setEmail] = useState('')
+  const [tel, setTel] = useState(telOriginal || '')
+  const [email, setEmail] = useState(emailOriginal || '')
 
   useEffect(() => {
     if(nomeOriginal.length > 0){
@@ -46,7 +46,7 @@ export const ItemLista = ({email: emailOriginal, nome: nomeOriginal, tel: telOri
         ): (
           <>
           <button onClick={() => setEstaEditando(true)} >Editar</button>
-          <button onClick={()=> dispatch(remover(nome))}>Excluir</button>
+          <button onClick={()=> dispatch(remover(email))}>Excluir</button>
           </>
         )}
       </Item>  

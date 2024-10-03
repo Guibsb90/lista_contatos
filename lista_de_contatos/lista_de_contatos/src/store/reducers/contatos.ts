@@ -13,10 +13,10 @@ const contatosSlice = createSlice({
   },
   reducers: {
     remover: (state, action: PayloadAction<string>) => {
-      state.itens = state.itens.filter(contato => contato.nome !== action.payload)
+      state.itens = state.itens.filter(contato => contato.email !== action.payload)
     },
     editar: (state, action: PayloadAction<Contatos>) =>{
-      const indexDoContato = state.itens.findIndex(c => c.nome === action.payload.nome)
+      const indexDoContato = state.itens.findIndex(c => c.email === action.payload.nome)
       if (indexDoContato >= 0){
         state.itens[indexDoContato] = action.payload
       }
