@@ -16,7 +16,7 @@ export const Lista = () => {
     <>
     <ListaNomes>
       {itens.map((m) =>(
-        <ItemLista key={m.nome} nome={m.nome} email={m.email} tel={m.tel} />
+        <ItemLista key={m.nome} id={m.id!} nome={m.nome} email={m.email} tel={m.tel} />
       ) )}      
     </ListaNomes>
     </>

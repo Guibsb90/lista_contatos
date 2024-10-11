@@ -5,12 +5,12 @@ import { Item } from "./styles"
 import { remover, editar } from "../../store/reducers/contatos"
 import Contatos from "../../models/Contato"
 
-type Props = Contatos
+type Props = Contatos & {id: number};
 
-export const ItemLista = ({email: emailOriginal, nome: nomeOriginal, tel: telOriginal}:Props) => {
+export const ItemLista = ({email: emailOriginal, nome: nomeOriginal, tel: telOriginal, id}:Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
-  const [nome, setNome] = useState('')
+  const [nome, setNome] = useState(nomeOriginal || '')
   const [tel, setTel] = useState(telOriginal || '')
   const [email, setEmail] = useState(emailOriginal || '')
 
@@ -46,7 +46,7 @@ export const ItemLista = ({email: emailOriginal, nome: nomeOriginal, tel: telOri
         ): (
           <>
           <button onClick={() => setEstaEditando(true)} >Editar</button>
-          <button onClick={()=> dispatch(remover(email))}>Excluir</button>
+          <button onClick={()=> dispatch(remover(id))}>Excluir</button>
           </>
         )}
       </Item>  

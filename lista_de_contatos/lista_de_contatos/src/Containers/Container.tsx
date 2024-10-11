@@ -13,8 +13,9 @@ export const Container = () => {
   const dispatch = useDispatch()
 
   const cadastrarContato = (evento: FormEvent) =>{
-    evento.preventDefault()
-    const contatoParaAdicionar =  new Contatos(nome, email, tel )
+    evento.preventDefault();
+    const id = Date.now();
+    const contatoParaAdicionar =  new Contatos(nome, email, tel, id )
     dispatch(cadastrar(contatoParaAdicionar))
   }
 
